@@ -1,0 +1,37 @@
+<VerticalStackLayout Padding="20">
+
+    <Button Text="Cargar juegos"
+            Command="{Binding LoadGamesCommand}" />
+
+    <Button Text="Agregar un juego"
+            Command="{Binding GoToAddCommand}" />
+
+    <Label Text="{Binding Status}" />
+
+	<Entry Placeholder="Buscar juego"
+       Text="{Binding SearchText}" />
+
+	<Button Text="Buscar"
+			Command="{Binding FilterGamesCommand}" />
+
+	<CollectionView ItemsSource="{Binding Games}">
+		<CollectionView.ItemTemplate>
+			<DataTemplate>
+				<VerticalStackLayout Padding="8">
+
+					<Label Text="{Binding Name}"
+						   FontSize="18"
+						   FontAttributes="Bold" />
+
+					<Label Text="{Binding Genre}" />
+
+					<Label Text="{Binding Developer}" />
+
+					<Label Text="{Binding Publisher}" />
+
+				</VerticalStackLayout>
+			</DataTemplate>
+		</CollectionView.ItemTemplate>
+	</CollectionView>
+
+</VerticalStackLayout>
